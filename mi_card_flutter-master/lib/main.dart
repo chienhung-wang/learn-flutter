@@ -43,32 +43,16 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              SizedBox(
+                height: 30.0,
+                width: 200.0,
+                child: Divider(
+                  thickness: 3.0,
+                  color: Colors.teal.shade100,
+                ),
+              ),
               cardTemplate(Icons.phone, '+886 931 272 491'),
               cardTemplate(Icons.email_outlined, 'wideheart123@gmail.com'),
-              // Container(
-              //   color: Colors.white,
-              //   margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-              //   padding: EdgeInsets.all(10.0),
-              //   child: Row(
-              //     children: [
-              //       Icon(
-              //         Icons.phone,
-              //         color: Colors.teal,
-              //       ),
-              //       SizedBox(
-              //         width: 10.0,
-              //       ),
-              //       Text(
-              //         '+886 931 272 491',
-              //         style: TextStyle(
-              //           fontFamily: 'SourceSansPro',
-              //           color: Colors.teal,
-              //           fontSize: 20.0,
-              //         ),
-              //       ),
-              //     ],
-              //   ),
-              // ),
             ],
           ),
         ),
@@ -77,29 +61,28 @@ class MyApp extends StatelessWidget {
   }
 }
 
-Container cardTemplate(icon, info) {
-  return Container(
+Card cardTemplate(icon, info) {
+  return Card(
     color: Colors.white,
     margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-    padding: EdgeInsets.all(10.0),
-    child: Row(
-      children: [
-        Icon(
+    child: Padding(
+      padding: EdgeInsets.all(10.0),
+      child: ListTile(
+        leading: Icon(
           icon,
-          color: Colors.teal,
+          color: Colors.teal.shade400,
+          size: 30.0,
         ),
-        SizedBox(
-          width: 10.0,
-        ),
-        Text(
+        title: Text(
           info,
           style: TextStyle(
             fontFamily: 'SourceSansPro',
-            color: Colors.teal,
-            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
+            fontSize: 22.0,
+            color: Colors.teal.shade400,
           ),
         ),
-      ],
+      ),
     ),
   );
 }
